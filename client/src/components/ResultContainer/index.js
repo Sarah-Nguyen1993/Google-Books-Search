@@ -1,13 +1,10 @@
 import React from "react";
-import Card from "../Card";
 import "./style.css";
 
-function ResultContainer(){
+function ResultContainer({children}){
     return(
         <div className="result-container">
-            <h2>Search Result</h2>
-            <Card>result 1</Card>
-            <Card>result 2</Card>
+            {children}
         </div>
     )
 };
