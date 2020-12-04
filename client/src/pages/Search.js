@@ -30,14 +30,16 @@ function Search(){
         //unable to clear out input field
         setSearch("")
     };
+    
     function saveBook(book){
-        API.saveBook(book)
-        //     title: book.volumeInfo.title,
-        //     authors: book.volumeInfo.authors,
-        //     description: book.volumeInfo.description,
-        //     image: book.volumeInfo.imageLinks.thumbnail,
-        //     link:book.volumeInfo.infoLink
-        //  }
+        API.saveBook({
+            title: book.volumeInfo.title,
+            authors: book.volumeInfo.authors,
+            description: book.volumeInfo.description,
+            image: book.volumeInfo.imageLinks.thumbnail,
+            link:book.volumeInfo.infoLink
+         }).catch(err => console.log(err))
+        
     };
 
     return (
