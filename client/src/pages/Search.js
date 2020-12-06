@@ -30,7 +30,7 @@ function Search(){
         //unable to clear out input field
         setSearch("")
     };
-    
+
     function saveBook(book){
         API.saveBook({
             title: book.volumeInfo.title,
@@ -38,7 +38,8 @@ function Search(){
             description: book.volumeInfo.description,
             image: book.volumeInfo.imageLinks.thumbnail,
             link:book.volumeInfo.infoLink
-         }).catch(err => console.log(err))
+         }).then(()=>console.log("book saved"))
+         .catch(err => console.log(err))
         
     };
 
@@ -89,19 +90,19 @@ function Search(){
                                    </Row>
                                    <Row>
                                        <Col size="md-10">
-                                       <h5>Authors: {book.volumeInfo.authors}</h5>
+                                       <h5>{book.volumeInfo.authors? "Authors: " + (book.volumeInfo.authors).join(', '): ["No authors available"]}</h5>
                                        </Col>
                                        <Col size="md-2">
                                            <a href={book.volumeInfo.infoLink} target="_blank" rel="noreferrer"><Button type="info">View</Button></a>
-                                            <Button type="success" onClick={() =>{saveBook(book);console.log("clicked");console.log(book)}}>Save</Button>
+                                            <Button type="success" onClick={() => saveBook(book)}>Save</Button>
                                        </Col>
                                    </Row>
                                    <Row>
                                        <Col size="md-3">
-                                           <Thumbnail src={book.volumeInfo.imageLinks.thumbnail}/>
+                                           <Thumbnail src={book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail: "#"}/>
                                        </Col>
                                        <Col size="md-9">
-                                            {book.volumeInfo.description}
+                                            {book.volumeInfo.description ? book.volumeInfo.description : ["No description available"]}
                                        </Col>
                                    </Row>
                                    
