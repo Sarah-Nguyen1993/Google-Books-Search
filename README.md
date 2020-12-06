@@ -2,9 +2,9 @@
 ## Description
 Google Books Search is a MERN full-stack application that allows users to search for books using google books api. Users can visit that book page by clicking View button. They can also save books that they are interested at and access to them later in Saved page. 
 ## Demo
-https://booksearchapp20.herokuapp.com/
 ![Demo](./demo.gif)
 ## Deployed Website 
+https://booksearchapp20.herokuapp.com/
 ## Tech
 * React
 * MongoDB
