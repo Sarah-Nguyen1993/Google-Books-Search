@@ -36,8 +36,8 @@ function Search(){
             title: book.volumeInfo.title,
             authors: book.volumeInfo.authors,
             description: book.volumeInfo.description,
-            image: book.volumeInfo.imageLinks.thumbnail,
-            link: book.volumeInfo.infoLink
+            thumbnail: book.volumeInfo.imageLinks.thumbnail,
+            bookLink: book.volumeInfo.infoLink
          }).then(()=>console.log("book saved"))
          .catch(err => console.log(err))
         
@@ -90,7 +90,7 @@ function Search(){
                                    </Row>
                                    <Row>
                                        <Col size="md-10">
-                                       <h5>{book.volumeInfo.authors? "Authors: " + (book.volumeInfo.authors).join(', '): ["No authors available"]}</h5>
+                                       <h5>{book.volumeInfo.authors? "Authors: " + (book.volumeInfo.authors).join(', '): ["Not available"]}</h5>
                                        </Col>
                                        <Col size="md-2">
                                            <a href={book.volumeInfo.infoLink} target="_blank" rel="noreferrer"><Button type="info">View</Button></a>
