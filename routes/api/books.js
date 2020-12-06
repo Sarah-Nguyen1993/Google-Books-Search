@@ -9,6 +9,6 @@ router.route("/")
 // Matches with "/api/books/:id"
 router
   .route("/:id")
-  .delete(bookController.remove);
+  .delete(bookController.delete);
 
 module.exports = router;
