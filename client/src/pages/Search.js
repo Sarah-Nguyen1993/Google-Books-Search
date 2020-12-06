@@ -37,7 +37,7 @@ function Search(){
             authors: book.volumeInfo.authors,
             description: book.volumeInfo.description,
             image: book.volumeInfo.imageLinks.thumbnail,
-            link:book.volumeInfo.infoLink
+            link: book.volumeInfo.infoLink
          }).then(()=>console.log("book saved"))
          .catch(err => console.log(err))
         
